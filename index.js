@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const axios = require('axios');
 const html = require('./generateHTML');
+const pdf = require('html-pdf');
 
 let username;
 
@@ -12,26 +13,8 @@ function axiosCall() {
         .then(function (res) {
             // console.log(res);
             const username = res.data.login,
-                profileImg = res.data.url,
-                location = res.data.location,
-                githubLink = res.data.html_url,
-                userBio = res.data.bio,
-                pubRepos = res.data.public_repos,
-                followers = res.data.followers,
-                stars = 'ruh roh, spaghetti-o\'s',
-                // "/user/watched" will have the list of repos the user has starred
-                following = res.data.following;
-
-            // console.log(username);
-            // console.log(profileImg);
-            // console.log(location);
-            // console.log(githubLink);
-            // console.log(userBio);
-            // console.log(pubRepos);
-            // console.log(followers);
-            // console.log(stars);
-            // console.log(following);
-
+                stars = 'ruh roh, spaghetti-o\'s';
+            // "/user/watched" will have the list of repos the user has starred
         })
         .catch(function (err) {
             console.log(err);
@@ -65,5 +48,9 @@ inquirer
 
 
 
-    // converting html to pdf npm?
+// converting html to pdf npm?
+// pdf.create(html, options).toFile('./profile.pdf', function (err, res) {
+//     if (err) return console.log(err);
+//     console.log(res); // { filename: '/app/profile.pdf' }
+// });
 
