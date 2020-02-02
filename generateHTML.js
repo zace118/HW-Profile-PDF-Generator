@@ -170,5 +170,51 @@ function generateHTML(data) {
               zoom: .75; 
             } 
            }
-        </style>`
+        </style>
+        
+        <body>
+    <div class="wrapper">
+        <div class="photo-header">
+            <p><img id="prof-img" src="${res.data.avatar_url}"></img></p>
+            <h1>Hello World!</h1>
+            <h1>My name is ${res.data.name}!</h1>
+            <div>
+                <h4><img src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_location_on_48px-512.png"
+                        width="30" height="30"><a href="${map}">${res.data.location}</a></h4>
+                <h4><img src="https://image.flaticon.com/icons/png/512/25/25231.png" width="30" height="30"><a
+                        href="${res.data.html_url}">GitHub</a></h4>
+                <h4><img src="https://www.freeiconspng.com/uploads/blogger-logo-icon-png-28.png" width="30"
+                        height="30"><a href="${res.data.blog}">Blog</a></h4>
+            </div>
+        </div>
+    </div>
+    <h2 id="bio">${res.data.bio}</h2>
+    <div class="container">
+        <div class='row'>
+            <div class='col'>
+                <div class="card">
+                    <h3>Public Repositories:</h3>${res.data.public_repos}
+                </div>
+                <div class="card">
+                    <h3>GitHub Stars</h3>${stars}
+                </div>
+            </div>
+            <div class='col'>
+                <div class="card">
+                    <h3>Followers</h3>${res.data.followers}
+                </div>
+                <div class="card">
+                    <h3>Following</h3>${res.data.following}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper"></div>
+    <script src="index.js">
+  </script>
+</body>`
+}
+
+module.exports = {
+    generateHTML: generateHTML
 }

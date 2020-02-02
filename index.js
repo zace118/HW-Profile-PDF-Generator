@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const axios = require('axios');
+const html = require('./generateHTML');
 
 let username;
 
@@ -9,7 +10,7 @@ function axiosCall() {
     axios
         .get(`https://api.github.com/users/${username}`)
         .then(function (res) {
-            console.log(res);
+            // console.log(res);
             const username = res.data.login,
                 profileImg = res.data.url,
                 location = res.data.location,
