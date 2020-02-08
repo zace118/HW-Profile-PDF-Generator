@@ -25,7 +25,8 @@ const colors = {
     }
 };
 
-function generateHTML(data) {
+function generateHTML(data, color) {
+    console.log(data, color);
     return `<!DOCTYPE html>
     <html lang="en">
     
@@ -63,9 +64,7 @@ function generateHTML(data) {
             } */
     
             .wrapper {
-                background-color: $ {
-                    colors[data.color].wrapperBackground
-                }
+                background-color: ${colors[color].wrapperBackground}
     
                 ;
                 padding-top: 100px;
@@ -133,15 +132,15 @@ function generateHTML(data) {
                 justify-content: center;
                 flex-wrap: wrap;
     
-                background-color:$ {
-                    colors[data.color].headerBackground
-                }
+                background-color:${
+        colors[color].headerBackground
+        }
     
                 ;
     
-                color: $ {
-                    colors[data.color].headerColor
-                }
+                color: ${
+        colors[color].headerColor
+        }
     
                 ;
                 padding: 10px;
@@ -157,9 +156,9 @@ function generateHTML(data) {
                 object-fit: cover;
                 margin-top: -75px;
     
-                border: 6px solid $ {
-                    colors[data.color].photoBorderColor
-                }
+                border: 6px solid ${
+        colors[color].photoBorderColor
+        }
     
                 ;
                 box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
@@ -196,15 +195,15 @@ function generateHTML(data) {
                 height: 175px;
                 width: auto;
     
-                background-color: $ {
-                    colors[data.color].headerBackground
-                }
+                background-color: ${
+        colors[color].headerBackground
+        }
     
                 ;
     
-                color: $ {
-                    colors[data.color].headerColor
-                }
+                color: ${
+        colors[color].headerColor
+        }
     
                 ;
                 margin: 20px;
@@ -237,21 +236,21 @@ function generateHTML(data) {
     <body>
         <div class="wrapper" id="topWrap">
             <div class="photo-header">
-                <p><img id="prof-img" src="${res.data.avatar_url}"></img></p>
+                <p><img id="prof-img" src="${data.data.avatar_url}"></img></p>
                 <h1>Hello World!</h1>
-                <h1>My name is ${res.data.name}!</h1>
+                <h1>My name is ${data.data.name}!</h1>
                 <!-- <div class="row"> -->
                 <!-- Location icon -->
                 <a href="#"><i class="fas fa-map-marker fa-4x">
-                        <p class="iconTitles">${res.data.location}</p>
+                        <p class="iconTitles">${data.data.location}</p>
                     </i></a>
                 <!-- Github Icon -->
-                <a href="${res.data.html_url}"><i class="fab fa-github-square fa-4x">
+                <a href="${data.data.html_url}"><i class="fab fa-github-square fa-4x">
                         <p class="iconTitles">GitHub</p class="iconTitles">
                     </i>
                 </a>
                 <!-- Blog icon -->
-                <a href="${res.data.blog}"><i class="fas fa-rss-square fa-4x">
+                <a href="${data.data.blog}"><i class="fas fa-rss-square fa-4x">
                         <p class="iconTitles">Blog</p>
                     </i></a>
     
@@ -259,11 +258,11 @@ function generateHTML(data) {
             </div>
         </div>
         <div class="container">
-            <h2 id="bio">${res.data.bio}</h2>
+            <h2 id="bio">${data.data.bio}</h2>
             <div class='row'>
                 <div class='col'>
                     <div class="card">
-                        <h3>Public Repositories: ${res.data.public_repos}</h3>
+                        <h3>Public Repositories: ${data.data.public_repos}</h3>
                     </div>
                     <div class="card">
                         <h3>GitHub Stars: ${stars}</h3>
@@ -271,10 +270,10 @@ function generateHTML(data) {
                 </div>
                 <div class='col'>
                     <div class="card">
-                        <h3>Followers: \n${res.data.followers}</h3>
+                        <h3>Followers: \n${data.data.followers}</h3>
                     </div>
                     <div class="card">
-                        <h3>Following: \n${res.data.following}</h3>
+                        <h3>Following: \n${data.data.following}</h3>
                     </div>
                 </div>
             </div>
@@ -285,6 +284,4 @@ function generateHTML(data) {
     </body>`
 }
 
-module.exports = {
-    generateHTML: generateHTML
-}
+module.exports = generateHTML;
