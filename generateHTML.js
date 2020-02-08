@@ -26,7 +26,8 @@ const colors = {
 };
 
 function generateHTML(data, color) {
-    console.log(data, color);
+    console.log(color);
+    // console.log(data, color);
     return `<!DOCTYPE html>
     <html lang="en">
     
@@ -132,15 +133,11 @@ function generateHTML(data, color) {
                 justify-content: center;
                 flex-wrap: wrap;
     
-                background-color:${
-        colors[color].headerBackground
-        }
+                background-color:${colors[color].headerBackground}
     
                 ;
     
-                color: ${
-        colors[color].headerColor
-        }
+                color: ${colors[color].headerColor}
     
                 ;
                 padding: 10px;
@@ -156,9 +153,7 @@ function generateHTML(data, color) {
                 object-fit: cover;
                 margin-top: -75px;
     
-                border: 6px solid ${
-        colors[color].photoBorderColor
-        }
+                border: 6px solid ${colors[color].photoBorderColor}
     
                 ;
                 box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
@@ -195,15 +190,11 @@ function generateHTML(data, color) {
                 height: 175px;
                 width: auto;
     
-                background-color: ${
-        colors[color].headerBackground
-        }
+                background-color: ${colors[color].headerBackground}
     
                 ;
     
-                color: ${
-        colors[color].headerColor
-        }
+                color: ${colors[color].headerColor}
     
                 ;
                 margin: 20px;

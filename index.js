@@ -10,17 +10,26 @@ function axiosCall(username, color) {
         .get(`https://api.github.com/users/${username}`)
         .then(function (res) {
             // console.log(res);
-            const username = res.data.login,
-                stars = 'ruh roh, spaghetti-o\'s';
-            // "/user/watched" will have the list of repos the user has starred
-            // converting html to pdf npm?
-            pdf.create(html(res, color)).toFile('./profile.pdf', function (err, res) {
-                if (err) return console.log(err);
-                console.log(res);
-            });
+            const username = res.data.login;
+
+            // const starRes = res.data.length
+
+            axios
+                .get(`https://api.github.com/users/${username}/starred`)
+                .then(function (res) {
+                    console.log(res.data.length);
+                    // const stars;
+                    // // --------------------------------------------
+                    // // converting html to pdf npm
+                    // pdf.create(html(res, color)).toFile('./profile.pdf', function (err, res) {
+                    //     if (err) return console.log(err);
+                    //     console.log(res);
+                    // });
+                })
+
         })
         .catch(function (err) {
-            console.log(err);
+            // console.log(err);
         })
 }
 
@@ -44,12 +53,8 @@ inquirer
         }
     ])
     .then(function (res) {
-        console.log(res);
+        // console.log(res);
         const username = res.username;
         const color = res.favColor;
         axiosCall(username, color);
     });
-
-
-
-
