@@ -49,8 +49,8 @@ inquirer
 
 
 // converting html to pdf npm?
-// pdf.create(html, options).toFile('./profile.pdf', function (err, res) {
-//     if (err) return console.log(err);
-//     console.log(res); // { filename: '/app/profile.pdf' }
-// });
+pdf.create(html, options).toFile('./profile.pdf', function (err, res) {
+    if (err) return console.log(err);
+    console.log(res); // { filename: '/app/profile.pdf' }
+});
 
