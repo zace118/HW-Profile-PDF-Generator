@@ -5,26 +5,23 @@ const html = require('./generateHTML');
 const pdf = require('html-pdf');
 
 function axiosCall(username, color) {
-    // axios call github api using username ------ https://github.com/users/${username}
+    // axios call github api using username
     axios
         .get(`https://api.github.com/users/${username}`)
         .then(function (res) {
-            // console.log(res);
             const username = res.data.login;
 
-            // const starRes = res.data.length
-
+            //Axios call for the stars
             axios
                 .get(`https://api.github.com/users/${username}/starred`)
-                .then(function (res) {
-                    console.log(res.data.length);
-                    // const stars;
-                    // // --------------------------------------------
-                    // // converting html to pdf npm
-                    // pdf.create(html(res, color)).toFile('./profile.pdf', function (err, res) {
-                    //     if (err) return console.log(err);
-                    //     console.log(res);
-                    // });
+                .then(function (starRes) {
+                    const stars = starRes.data.length;
+
+                    // converting html to pdf npm
+                    pdf.create(html(res, color, stars)).toFile('./profile.pdf', function (err, res) {
+                        if (err) return console.log('ERROR INDEX.JS LINE 24');
+                        console.log('Success!!!!');
+                    });
                 })
 
         })

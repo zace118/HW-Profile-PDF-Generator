@@ -25,9 +25,9 @@ const colors = {
     }
 };
 
-function generateHTML(data, color) {
-    console.log(color);
-    // console.log(data, color);
+function generateHTML(data, color, stars) {
+    // console.log(color);
+    // console.log(data.data);
     return `<!DOCTYPE html>
     <html lang="en">
     
