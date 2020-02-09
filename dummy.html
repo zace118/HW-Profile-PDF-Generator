@@ -28,18 +28,8 @@
             margin: 0;
         }
 
-        /* html,
-        body,
         .wrapper {
-            height: 95%;
-        } */
-
-        .wrapper {
-            background-color: $ {
-                colors[data.color].wrapperBackground
-            }
-
-            ;
+            background-color: #DE9967;
             padding-top: 100px;
         }
 
@@ -105,17 +95,9 @@
             justify-content: center;
             flex-wrap: wrap;
 
-            background-color:$ {
-                colors[data.color].headerBackground
-            }
+            background-color: #870603;
 
-            ;
-
-            color: $ {
-                colors[data.color].headerColor
-            }
-
-            ;
+            color: white;
             padding: 10px;
             height: 550px;
             width: 95%;
@@ -129,11 +111,7 @@
             object-fit: cover;
             margin-top: -75px;
 
-            border: 6px solid $ {
-                colors[data.color].photoBorderColor
-            }
-
-            ;
+            border: 6px solid white;
             box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
         }
 
@@ -168,17 +146,9 @@
             height: 175px;
             width: auto;
 
-            background-color: $ {
-                colors[data.color].headerBackground
-            }
+            background-color: #870603;
 
-            ;
-
-            color: $ {
-                colors[data.color].headerColor
-            }
-
-            ;
+            color: white;
             margin: 20px;
         }
 
@@ -209,21 +179,21 @@
 <body>
     <div class="wrapper" id="topWrap">
         <div class="photo-header">
-            <p><img id="prof-img" src="${res.data.avatar_url}"></img></p>
+            <p><img id="prof-img" src="${data.data.avatar_url}"></img></p>
             <h1>Hello World!</h1>
-            <h1>My name is ${res.data.name}!</h1>
+            <h1>My name is Zac!</h1>
             <!-- <div class="row"> -->
             <!-- Location icon -->
             <a href="#"><i class="fas fa-map-marker fa-4x">
-                    <p class="iconTitles">${res.data.location}</p>
+                    <p class="iconTitles">Tempe, AZ</p>
                 </i></a>
             <!-- Github Icon -->
-            <a href="${res.data.html_url}"><i class="fab fa-github-square fa-4x">
+            <a href="${data.data.html_url}"><i class="fab fa-github-square fa-4x">
                     <p class="iconTitles">GitHub</p class="iconTitles">
                 </i>
             </a>
             <!-- Blog icon -->
-            <a href="${res.data.blog}"><i class="fas fa-rss-square fa-4x">
+            <a href="${data.data.blog}"><i class="fas fa-rss-square fa-4x">
                     <p class="iconTitles">Blog</p>
                 </i></a>
 
@@ -231,22 +201,23 @@
         </div>
     </div>
     <div class="container">
-        <h2 id="bio">${res.data.bio}</h2>
+        <h2 id="bio">stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff
+            stuff stuff </h2>
         <div class='row'>
             <div class='col'>
                 <div class="card">
-                    <h3>Public Repositories: ${res.data.public_repos}</h3>
+                    <h3>Public Repositories: 13</h3>
                 </div>
                 <div class="card">
-                    <h3>GitHub Stars: ${stars}</h3>
+                    <h3>GitHub Stars: 0</h3>
                 </div>
             </div>
             <div class='col'>
                 <div class="card">
-                    <h3>Followers: \n${res.data.followers}</h3>
+                    <h3>Followers: 22</h3>
                 </div>
                 <div class="card">
-                    <h3>Following: \n${res.data.following}</h3>
+                    <h3>Following: 5</h3>
                 </div>
             </div>
         </div>
