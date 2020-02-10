@@ -5,3 +5,4 @@ This is a CLI application used to generate a PDF profile snapshot from a specifi
 
 
 # GIF of the application in action:
+![Gif](/Assets/Profile_PDF_Generator.gif)
